@@ -1,4 +1,3 @@
-
 import os
 import streamlit as st
 import pandas as pd
@@ -9,8 +8,7 @@ import joblib
 # --------------------------------------------------
 st.set_page_config(
     page_title="Tourism Experience Analytics",
-    layout="wide"
-)
+    layout="wide")
 
 st.title("🌍 Tourism Experience Analytics")
 
@@ -82,7 +80,7 @@ st.subheader("🎯 Recommended Attractions")
 
 top_attractions = (
     df[df["AttractionType"] == attraction_type]
-    .groupby("Attraction")["Rating"]
+    .groupby("Attraction")["Rating_scaled"]
     .mean()
     .sort_values(ascending=False)
     .head(5)
